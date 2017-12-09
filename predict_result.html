@@ -9,7 +9,7 @@
 		<!-- Bootstrap CSS -->
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     	<script type="text/javascript">
-    		window.onload = function getResult(){
+    		function getResult(){
     			document.getElementById("result").innerHTML = "You result is: "+ localStorage.sum;
     			var id = localStorage.sum;
     			var pjs = Processing.getInstanceById("score");
@@ -22,5 +22,8 @@
     <body>
     	<div id="result"></div>
     	<canvas id="score" data-processing-soruces="result.pde"></canvas>
+    	<script type="text/javascript">
+    		getResult();
+    	</script>
     </body>
 </html>
