@@ -8,9 +8,66 @@
 		<script src="processing.js"></script>
 		<!-- Bootstrap CSS -->
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    	<script type="text/javascript">
+    		function getAnswer(field) {
+      			var radios = document.getElementsByName(field);
+      			for (var i = 0, length = radios.length; i < length; i++) {
+      				if (radios[i].checked) {
+      					return parseInt(radios[i].value);
+      					break;
+      				}
+      			}
+    		}
+    		function getSum(){
+    			var sum = getAnswer('question1')+getAnswer('question2');
+				localStorage.setItem("sum",sum);
+				console.log(localStorage.sum);
+    		}
+  		</script>
   	</head>
 
 	<body>
-		
+		<div class="container">
+			<h1>Predict test</h1>
+			<br>
+				<form>
+					<h3>question1:</h3>
+		    		<div class="form-group">
+		        		<input name="question1" type="radio" value="1" checked="checked">
+		        		<label for="radio120">Option 1</label>
+		    		</div>
+
+		    		<div class="form-group">
+		        		<input name="question1" type="radio" value="2">
+		        		<label for="radio121">Option 2</label>
+		    		</div>
+
+		    		<div class="form-group">
+		        		<input name="question1" type="radio" value="3">
+		        		<label for="radio122">Option 3</label>
+		    		</div>
+				</form>
+
+				<form>
+					<h3>question2:</h3>
+		    		<div class="form-group">
+		        		<input name="question2" type="radio" value="10"checked="checked">
+		        		<label for="question2">Option 1</label>
+		    		</div>
+
+		    		<div class="form-group">
+		        		<input name="question2" type="radio" value="20">
+		        		<label for="question2">Option 2</label>
+		    		</div>
+
+		    		<div class="form-group">
+		        		<input name="question2" type="radio" value="30">
+		        		<label for="question2">Option 3</label>
+		    		</div>
+				</form>
+				<br>
+				<input type="button" class="btn btn-primary" value="CONFIRM" onclick="getSum()"/>
+				<input type="submit" class="btn btn-primary" value="SUBMIT" onclick="location.href='predict_result.html'"/>
+		</div>
 	</body>	
 </html>
