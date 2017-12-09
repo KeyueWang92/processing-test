@@ -5,6 +5,7 @@ class Button {
   public Float wid = 55.0;
   public Float hgt = 30.0;
   public int c = 50;
+  public boolean selected = false;
   public Button(String label, float x, float y) {
     this.label = label;
     this.x = x;
