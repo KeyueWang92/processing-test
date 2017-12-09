@@ -12,7 +12,8 @@
     		window.onload = function getResult(){
     			document.getElementById("result").innerHTML = "You result is: "+ localStorage.sum;
     			var id = localStorage.sum;
-    			var pjs = processing.getInstanceById("score");
+    			var pjs = Processing.getInstanceById("score");
+    			console.log(pjs);
     			score.draw_text(id);
     		}
 
