@@ -14,7 +14,8 @@
     			var id = localStorage.sum;
     			var pjs = Processing.getInstanceById("score");
     			console.log(pjs);
-    			pjs.draw_text(id);
+    			if (pjs) pjs.draw_text(id);
+    			else setTimeout(getResult,1000);
     		}
     	</script>
     </head>
