@@ -2,7 +2,6 @@ boolean display = true;
 int value = 100;
 void setup(){
   size(800,600);
-  
 }
 
 void draw(){
