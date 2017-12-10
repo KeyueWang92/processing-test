@@ -12,5 +12,6 @@ void draw(){
 
 void draw_text(int value) {
   display = true;
+  fill(0);
   text(value+"",200,200);
 }
