@@ -18,6 +18,7 @@
                 console.log(tags);
                 console.log(weights);
     			if (pjs) {
+                    convert_js_to_java(tags,weights);
     				pjs.draw_text(tags,weights);
     			}
     			else setTimeout(getResult,1000);
