@@ -11,12 +11,12 @@
     	<script type="text/javascript">
     		function getResult(){
     			// document.getElementById("result").innerHTML = "You result is: "+ localStorage.sum;
-                var tags = localStorage.answerlist[0];
-                var weights = localStorage.answerweight[0];
+                var tags = localStorage.answerlist;
+                var weights = localStorage.answerweight;
     			var pjs = Processing.getInstanceById("score");
     			console.log(pjs);
     			if (pjs) {
-    				pjs.draw_text(tags);
+    				pjs.draw_text(tags,weights);
     			}
     			else setTimeout(getResult,1000);
     		}
