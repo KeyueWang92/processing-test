@@ -14,12 +14,13 @@
                 var tags = localStorage.answerlist;
                 var weights = localStorage.answerweight;
     			var pjs = Processing.getInstanceById("score");
-    			console.log(pjs);
                 console.log(tags);
                 console.log(weights);
     			if (pjs) {
                     pjs.convert_js_to_java(tags,weights);
-    				pjs.draw_text(tags,weights);
+    				// pjs.draw_text(tags,weights);
+                    pjs.assign_scores();
+                    pjs.get_result();
     			}
     			else setTimeout(getResult,1000);
     		}
