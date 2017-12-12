@@ -8,13 +8,11 @@ void setup(){
 
 void draw(){
   background(255);
-  if (display == true) draw_text(answerlist, weights);
+  if (display == true) draw_text();
 }
 
-void draw_text(String[] list1, String[] list2) {
+void draw_text() {
   display = true;
-  answerlist = list1;
-  weights = list2;
   fill(0);
   for (int i = 0; i < answerlist.length;i++){
     text(answerlist[i],100,100+i*50);
