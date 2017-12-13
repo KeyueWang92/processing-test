@@ -139,6 +139,7 @@ void predict(String str1, String str2) {
   convert_js_to_java(str1,str2);
   assign_scores();
   get_result();
+  println(clicked);
 }
 
 class icon_obj {

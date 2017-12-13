@@ -249,7 +249,6 @@ class RadarObj {
   void draw(String hl_inBound, boolean highlight, boolean drawornot) {
     this.drawornot = drawornot;
     if(!drawornot) return;
-    println("endp: ", endP.x," ",endP.y);
     if (inBound()){
       fill(r,g,b,180);
        
