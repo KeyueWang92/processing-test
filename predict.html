@@ -22,7 +22,7 @@
       				}
       			}
     		}
-    		
+
     		function getSum(){
     			var answerlist = []
     			var answerweight = []
@@ -50,6 +50,7 @@
     			answerweight[8] = getAnswer('question9b');
     			answerweight[9] = getAnswer('question10b');
     			answerweight[10] = getAnswer('question11b');
+    			
 				localStorage.setItem("answerlist",answerlist);
 				localStorage.setItem("answerweight",answerweight);
 				console.log(localStorage.answerlist);
@@ -74,34 +75,35 @@
 		<div class="site-wrapper">
       		<div class="site-wrapper-inner"  style="background-image: url(background.jpg); background-size: cover;">
         		<div class="cover-container">
-	      			<div class="inner cover">
+	      			<div class="inner cover" style="text-align:left;">
 	      				<br>
 	      				<br>
 	      				<br>
-	            		<h1 class="cover-heading">Survey</h1>
-	            		<p class="lead">this is a survey. blablabla........................</p><br><br>
+	            		<h1 class="cover-heading" >Get your champion</h1>
+	            		<p class="lead">Take a quick survey and let us predict the champions that suit you.</p><br><br>
 	            	</div>
-						<div class="container">
-							<h5> question1a: Location. </h5><br>
+						<div class="container" style="text-align:left;">
+							<h5> 1. What lane would you pick? Please select the Location that you're most interested in.</h5><br>
+							<p>Summoner's Rift has 3 lanes (Top, Bottom and Middle) which are defended by 3 turrets (Outer, Inner, Inhibitor). The general rule is that one champion goes top, one goes to the jungle, two go bottom, and one goes in the middle. </p>
 							<div class="btn-group-vertical" data-toggle="buttons">
 							  <label class="btn btn-primary active">
-							    <input type="radio" name="question1a" id="option1" autocomplete="off" value="top" checked> top
+							    <input type="radio" name="question1a" id="option1" autocomplete="off" value="top" checked> Top Lane: needs to have high survability, high damage or engages.
 							  </label>
 							  <label class="btn btn-primary">
-							    <input type="radio" name="question1a" id="option2" autocomplete="off" value="middle"> middle
+							    <input type="radio" name="question1a" id="option2" autocomplete="off" value="middle"> Middle Lane: needs to have high burst damage.
 							  </label>
 							  <label class="btn btn-primary">
-							    <input type="radio" name="question1a" id="option3" autocomplete="off" value="bottom"> bottom
+							    <input type="radio" name="question1a" id="option3" autocomplete="off" value="bottom"> Bottom Carry: vulnerable, needs to acquire as much gold as possible<br>to purchase key items that will greatly increase their fighting potential.
 							  </label>
 							   <label class="btn btn-primary">
-							    <input type="radio" name="question1a" id="option2" autocomplete="off" value="jungle"> jungle
+							    <input type="radio" name="question1a" id="option2" autocomplete="off" value="jungle"> Jungle: needs to be able to clear jungle camps without too much<br>difficulty and gank other champions.
 							  </label>
 							  <label class="btn btn-primary">
-							    <input type="radio" name="question1a" id="option3" autocomplete="off" value="support"> support
-							  </label>
+							    <input type="radio" name="question1a" id="option3" autocomplete="off" value="support"> Support: Assist their more vulnerable team mate through the<br>earliest stages of the game. Suits champions with either utility,<br>disengage or high base damage.
+								</label>
 							</div>
 							<br><br>
-							<h5> question1b: How likely is it that the question above is essential to you. </h5>
+							<h5>How likely is it that the question above is essential to you. </h5>
 							<p> 1: not at all likely, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 10: extremely likely </p>
 							<div class="btn-group" data-toggle="buttons">
 							  <label class="btn btn-primary active">
@@ -138,17 +140,18 @@
 							</div>
 							<br><br><br>
 
-							<h5> question2a: Range. </h5><br>
+							<h5>2. Would you like your champion be a melee champoin or ranged champoin?</h5><br>
+							<p>Range is a measurement used to determine how far an autoattack or ability can reach.Each champion begins the game with a particular base autoattack range. This can vary from 125 to 250 for melee units and 300 to 650 for ranged units.</p>
 							<div class="btn-group-vertical" data-toggle="buttons">
 							  <label class="btn btn-primary active">
-							    <input type="radio" name="question2a" id="option1" autocomplete="off" value="near" checked> near.
+							    <input type="radio" name="question2a" id="option1" autocomplete="off" value="near" checked> melee
 							  </label>
 							  <label class="btn btn-primary">
-							    <input type="radio" name="question2a" id="option2" autocomplete="off" value="far"> far
+							    <input type="radio" name="question2a" id="option2" autocomplete="off" value="far"> ranged
 							  </label>
 							</div>
 							<br><br>
-							<h5> question2b: How likely is it that the question above is essential to you. </h5>
+							<h5>How likely is it that the question above is essential to you. </h5>
 							<p> 1: not at all likely, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 10: extremely likely </p>
 							<div class="btn-group" data-toggle="buttons">
 							  <label class="btn btn-primary active">
@@ -184,17 +187,17 @@
 							</div>
 							<br><br><br>
 
-							<h5> question3a: Gender. </h5><br>
+							<h5>3. Would you like your champion be a male or female?</h5><br>
 							<div class="btn-group-vertical" data-toggle="buttons">
 							  <label class="btn btn-primary active">
-							    <input type="radio" name="question3a" id="option1" autocomplete="off" value="male" checked> male
+							    <input type="radio" name="question3a" id="option1" autocomplete="off" value="male" checked>Male
 							  </label>
 							  <label class="btn btn-primary">
-							    <input type="radio" name="question3a" id="option2" autocomplete="off" value="female"> female
+							    <input type="radio" name="question3a" id="option2" autocomplete="off" value="female"> Female
 							  </label>
 							</div>
 							<br><br>
-							<h5> question3b: How likely is it that the question above is essential to you. </h5>
+							<h5>How likely is it that the question above is essential to you. </h5>
 							<p> 1: not at all likely, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 10: extremely likely </p>
 							<div class="btn-group" data-toggle="buttons">
 							  <label class="btn btn-primary active">
@@ -230,26 +233,26 @@
 							</div>
 							<br><br><br>
 							
-							<h5> question4a: appearance. </h5><br>
+							<h5>4. Would you like your champion be...?</h5><br>
 							<div class="btn-group-vertical" data-toggle="buttons">
 							  <label class="btn btn-primary active">
-							    <input type="radio" name="question4a" id="option1" autocomplete="off" value="cute" checked> cute
+							    <input type="radio" name="question4a" id="option1" autocomplete="off" value="cute" checked>Cute
 							  </label>
 							  <label class="btn btn-primary">
-							    <input type="radio" name="question4a" id="option2" autocomplete="off" value="sexy"> sexy
+							    <input type="radio" name="question4a" id="option2" autocomplete="off" value="sexy"> Sexy
 							  </label>
 							  <label class="btn btn-primary">
-							    <input type="radio" name="question4a" id="option3" autocomplete="off" value="handsome"> handsome
+							    <input type="radio" name="question4a" id="option3" autocomplete="off" value="handsome"> Handsome
 							  </label>
 							   <label class="btn btn-primary">
-							    <input type="radio" name="question4a" id="option2" autocomplete="off" value="fierce"> fierce
+							    <input type="radio" name="question4a" id="option2" autocomplete="off" value="fierce"> Fierce
 							  </label>
 							  <label class="btn btn-primary">
-							    <input type="radio" name="question4a" id="option3" autocomplete="off" value="wicked"> wicked
+							    <input type="radio" name="question4a" id="option3" autocomplete="off" value="wicked"> Wicked
 							  </label>
 							</div>
 							<br><br>
-							<h5> question4b: How likely is it that the question above is essential to you. </h5>
+							<h5>How likely is it that the question above is essential to you. </h5>
 							<p> 1: not at all likely, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 10: extremely likely </p>
 							<div class="btn-group" data-toggle="buttons">
 							  <label class="btn btn-primary active">
@@ -286,32 +289,33 @@
 							</div>
 							<br><br><br>
 
-							<h5> question5a: role. </h5><br>
+							<h5>5. What class would you like your champion to be?</h5><br>
+							<p>Every champion in League of Legends has an assigned class. This class represents a defined set of patterns in player's behavior, responses and reactions to environment (including but not exclusive to enemies and own team). This may also include preferred item and ability paths, summoner spells, stats, runes or masteries.</p>
 							<div class="btn-group-vertical" data-toggle="buttons">
 							  <label class="btn btn-primary active">
-							    <input type="radio" name="question5a" id="option1" autocomplete="off" value="Fighter" checked> Fighter
+							    <input type="radio" name="question5a" id="option1" autocomplete="off" value="Fighter" checked> Fighter: durable and damage-focused melee champions that look to be in the<br>thick of combat.
 							  </label>
 							  <label class="btn btn-primary">
-							    <input type="radio" name="question5a" id="option2" autocomplete="off" value="Mage"> Mage
+							    <input type="radio" name="question5a" id="option2" autocomplete="off" value="Mage"> Mage: offensive casters that seek to cripple and burn down the opposition<br>through their potent spells.
 							  </label>
 							  <label class="btn btn-primary">
-							    <input type="radio" name="question5a" id="option3" autocomplete="off" value="Slayer"> Slayer
+							    <input type="radio" name="question5a" id="option3" autocomplete="off" value="Slayer"> Slayer: fragile but agile damage-focused melee champions that look to swiftyly<br>take down their targets.
 							  </label>
 							   <label class="btn btn-primary">
-							    <input type="radio" name="question5a" id="option2" autocomplete="off" value="Tank"> Tank
+							    <input type="radio" name="question5a" id="option2" autocomplete="off" value="Tank"> Tank: excel in shrugging off incoming damage and focus on disrupting their<br>enemies  more than being significant damage threats themselves.
 							  </label>
 							  <label class="btn btn-primary">
-							    <input type="radio" name="question5a" id="option3" autocomplete="off" value="Marksman"> Marksman
+							    <input type="radio" name="question5a" id="option3" autocomplete="off" value="Marksman">Marksman: excel at dealing reliable sustained damage at range while constantly<br>skirting the edge of danger. They are very fragile and are extremely reliant<br>on powerful item purchases to become true damage threats.
 							  </label>
 							  <label class="btn btn-primary">
-							    <input type="radio" name="question5a" id="option2" autocomplete="off" value="Specialist"> Specialist
+							    <input type="radio" name="question5a" id="option2" autocomplete="off" value="Specialist"> Specialist: do not fit into the "neat little boxes" of the other classes, with a<br>lot of distinctiveness and diversity.
 							  </label>
 							  <label class="btn btn-primary">
-							    <input type="radio" name="question5a" id="option3" autocomplete="off" value="Controller"> Controller
+							    <input type="radio" name="question5a" id="option3" autocomplete="off" value="Controller"> Controller: defensive casters that oversee the battlefield by protecting and<br> opening up opportunities for their allies.
 							  </label>
 							</div>
 							<br><br>
-							<h5> question5b: How likely is it that the question above is essential to you. </h5>
+							<h5>How likely is it that the question above is essential to you. </h5>
 							<p> 1: not at all likely, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 10: extremely likely </p>
 							<div class="btn-group" data-toggle="buttons">
 							  <label class="btn btn-primary active">
@@ -348,17 +352,18 @@
 							</div>
 							<br><br><br>
 
-							<h5> question6a: Damage. </h5><br>
+							<h5>6. Is "Damage" important to your champion?</h5><br>
+							<p>Damage is the champion's ability to deal damage.</p>
 							<div class="btn-group-vertical" data-toggle="buttons">
 							  <label class="btn btn-primary active">
-							    <input type="radio" name="question6a" id="option1" autocomplete="off" value="yes" checked> yes
+							    <input type="radio" name="question6a" id="option1" autocomplete="off" value="yes" checked>Yes
 							  </label>
 							  <label class="btn btn-primary">
-							    <input type="radio" name="question6a" id="option2" autocomplete="off" value="no"> no
+							    <input type="radio" name="question6a" id="option2" autocomplete="off" value="no">No
 							  </label>
 							</div>
 							<br><br>
-							<h5> question6b: How likely is it that the question above is essential to you. </h5>
+							<h5>How likely is it that the question above is essential to you. </h5>
 							<p> 1: not at all likely, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 10: extremely likely </p>
 							<div class="btn-group" data-toggle="buttons">
 							  <label class="btn btn-primary active">
@@ -394,17 +399,18 @@
 							</div>
 							<br><br><br>
 
-							<h5> question7a: Toughness. </h5><br>
+							<h5>7. Is "Toughness" important to your champion? </h5><br>
+							<p>Toughness is the champion's ability to survive being focused.</p>
 							<div class="btn-group-vertical" data-toggle="buttons">
 							  <label class="btn btn-primary active">
-							    <input type="radio" name="question7a" id="option1" autocomplete="off" value="yes" checked> yes
+							    <input type="radio" name="question7a" id="option1" autocomplete="off" value="yes" checked>Yes
 							  </label>
 							  <label class="btn btn-primary">
-							    <input type="radio" name="question7a" id="option2" autocomplete="off" value="no"> no
+							    <input type="radio" name="question7a" id="option2" autocomplete="off" value="no">No
 							  </label>
 							</div>
 							<br><br>
-							<h5> question7b: How likely is it that the question above is essential to you. </h5>
+							<h5>How likely is it that the question above is essential to you. </h5>
 							<p> 1: not at all likely, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 10: extremely likely </p>
 							<div class="btn-group" data-toggle="buttons">
 							  <label class="btn btn-primary active">
@@ -440,17 +446,18 @@
 							</div>
 							<br><br><br>
 
-							<h5> question8a: Crowd Control. </h5><br>
+							<h5>8. Is "Crowd Control" important to your champion?</h5><br>
+							<P>Crowd Control is the champion's ability to disable or disrupt enemies.</P>
 							<div class="btn-group-vertical" data-toggle="buttons">
 							  <label class="btn btn-primary active">
-							    <input type="radio" name="question8a" id="option1" autocomplete="off" value="yes" checked> yes
+							    <input type="radio" name="question8a" id="option1" autocomplete="off" value="yes" checked>Yes
 							  </label>
 							  <label class="btn btn-primary">
-							    <input type="radio" name="question8a" id="option2" autocomplete="off" value="no"> no
+							    <input type="radio" name="question8a" id="option2" autocomplete="off" value="no">No
 							  </label>
 							</div>
 							<br><br>
-							<h5> question8b: How likely is it that the question above is essential to you. </h5>
+							<h5>How likely is it that the question above is essential to you. </h5>
 							<p> 1: not at all likely, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 10: extremely likely </p>
 							<div class="btn-group" data-toggle="buttons">
 							  <label class="btn btn-primary active">
@@ -486,17 +493,18 @@
 							</div>
 							<br><br><br>
 
-							<h5> question9a: Mobility. </h5><br>
+							<h5>9. Is "Mobility" important to your champion?</h5><br>
+							<p>Mobility is the champion's ability to move quickly around the map, blink or dash.</p>
 							<div class="btn-group-vertical" data-toggle="buttons">
 							  <label class="btn btn-primary active">
-							    <input type="radio" name="question9a" id="option1" autocomplete="off" value="yes" checked> yes
+							    <input type="radio" name="question9a" id="option1" autocomplete="off" value="yes" checked>Yes
 							  </label>
 							  <label class="btn btn-primary">
-							    <input type="radio" name="question9a" id="option2" autocomplete="off" value="no"> no
+							    <input type="radio" name="question9a" id="option2" autocomplete="off" value="no">No
 							  </label>
 							</div>
 							<br><br>
-							<h5> question9b: How likely is it that the question above is essential to you. </h5>
+							<h5>How likely is it that the question above is essential to you. </h5>
 							<p> 1: not at all likely, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 10: extremely likely </p>
 							<div class="btn-group" data-toggle="buttons">
 							  <label class="btn btn-primary active">
@@ -533,17 +541,18 @@
 							<br><br><br>
 
 
-							<h5> question10a: Utility. </h5><br>
+							<h5>10. Is "Utility" important to your champion? </h5><br>
+							<p>Utility is the champion's ability to grant beneficial effects to their allies or to provide vision.</p>
 							<div class="btn-group-vertical" data-toggle="buttons">
 							  <label class="btn btn-primary active">
-							    <input type="radio" name="question10a" id="option1" autocomplete="off" value="yes" checked> yes
+							    <input type="radio" name="question10a" id="option1" autocomplete="off" value="yes" checked>Yes
 							  </label>
 							  <label class="btn btn-primary">
-							    <input type="radio" name="question10a" id="option2" autocomplete="off" value="no"> no
+							    <input type="radio" name="question10a" id="option2" autocomplete="off" value="no">No
 							  </label>
 							</div>
 							<br><br>
-							<h5> question10b: How likely is it that the question above is essential to you. </h5>
+							<h5>How likely is it that the question above is essential to you. </h5>
 							<p> 1: not at all likely, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 10: extremely likely </p>
 							<div class="btn-group" data-toggle="buttons">
 							  <label class="btn btn-primary active">
@@ -579,17 +588,17 @@
 							</div>
 							<br><br><br>
 
-							<h5> question11a: Difficulty. </h5><br>
+							<h5>Would you like to play a champion that takes lots of skill? </h5><br>
 							<div class="btn-group-vertical" data-toggle="buttons">
 							  <label class="btn btn-primary active">
-							    <input type="radio" name="question11a" id="option1" autocomplete="off" value="yes" checked> yes
+							    <input type="radio" name="question11a" id="option1" autocomplete="off" value="yes" checked>Yes
 							  </label>
 							  <label class="btn btn-primary">
-							    <input type="radio" name="question11a" id="option2" autocomplete="off" value="no"> no
+							    <input type="radio" name="question11a" id="option2" autocomplete="off" value="no">No
 							  </label>
 							</div>
 							<br><br>
-							<h5> question11b: How likely is it that the question above is essential to you. </h5>
+							<h5>How likely is it that the question above is essential to you. </h5>
 							<p> 1: not at all likely, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 10: extremely likely </p>
 							<div class="btn-group" data-toggle="buttons">
 							  <label class="btn btn-primary active">
