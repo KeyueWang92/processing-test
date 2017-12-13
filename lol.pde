@@ -39,6 +39,7 @@ void setup() {
 }
 
 void draw() {
+  println(clicked.size());
   mouse_in = -1;
   background(10);
   if(cur_state == 0) {
