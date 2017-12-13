@@ -27,7 +27,6 @@ void setup() {
   }
   
   p = new Parser("database.csv");
-  comparison = new multi(clicked,p);
   /*
   for(int i = 0; i < 4; i++) {
     path = "icon/"+str(i)+".jpg";
@@ -39,7 +38,6 @@ void setup() {
 }
 
 void draw() {
-  println(clicked.size());
   mouse_in = -1;
   background(10);
   if(cur_state == 0) {
@@ -72,6 +70,7 @@ void draw() {
     back.draw(false,false);
   }
   else if (cur_state == 2) {
+    comparison = new multi(clicked,p);
     path = "multi-bg.jpg";
     img = loadImage(path);
     image(img,0,0);

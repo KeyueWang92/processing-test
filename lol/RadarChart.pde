@@ -81,9 +81,10 @@ class RadarChart {
   
   void drawPolygon() {
     pushStyle();
-    fill(255,60);
+    fill(22,33,45,60);
     for(int i = 3; i > 0; i-=1) {
       beginShape();
+      stroke(22,33,45);
       vertex(dmg(i)[0],dmg(i)[1]);
       vertex(tough(i)[0],tough(i)[1]);
       vertex(cc(i)[0],cc(i)[1]);
@@ -95,6 +96,7 @@ class RadarChart {
   }
   
   void drawAxis() {
+    stroke(22,33,45);
     line(center_x, center_y, dmg(max_value)[0], dmg(max_value)[1]);
     line(center_x, center_y, tough(max_value)[0], tough(max_value)[1]);
     line(center_x, center_y, cc(max_value)[0], cc(max_value)[1]);
@@ -235,7 +237,7 @@ class RadarObj {
     if(lineIsect(cur, endP, utl, dmg)) num++;
     if(num%2==0) return false;
     else {
-      hl_inBound = this.name;
+      //hl_inBound = this.name;
       pushStyle();
       textAlign(LEFT, TOP);
       textSize(15);
@@ -250,17 +252,17 @@ class RadarObj {
     this.drawornot = drawornot;
     if(!drawornot) return;
     if (inBound()){
-      fill(r,g,b,180);
-       
+      fill(r,g,b,90);
     }
     else if(this.name == hl_inBound){
-      fill(r,g,b, 180);
+      fill(r,g,b,90);
     }
     else {
       fill(r,g,b,40);
     }
     
     beginShape();
+    stroke(r,g,b,120);
     vertex(dmg.x,dmg.y);
     vertex(tough.x,tough.y);
     vertex(cc.x,cc.y);

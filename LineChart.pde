@@ -53,7 +53,7 @@ class LineChart{
     lines = new Line[lineCount];
     
     PImage img = loadImage("button.png");
-    b_hp  = new Button(x,   y,    50,50,"HP" ,img);
+    b_hp  = new Button(x,   y,    50,50,"HP",img);
     b_hp5 = new Button(x+70,y,    50,50,"HP5",img);
     b_mp  = new Button(x,   y+70, 50,50,"MP" ,img);
     b_mp5 = new Button(x+70,y+70, 50,50,"MP5",img);
@@ -67,7 +67,7 @@ class LineChart{
     this.button = button;
   }
   void draw_axis() {
-    stroke(200);
+    stroke(22,33,45);
     strokeWeight(2);
     textSize(10);
     fill(255);
@@ -183,7 +183,7 @@ class Line{
     if(!drawornot) return false;
     for(int i = 0; i < level_count; i++){
       if (points[i].inBound()){
-        //hl_inBound = this.name;
+        hl_inBound = this.name;
         return true;
       }
     }
@@ -195,20 +195,21 @@ class Line{
     if(!drawornot) return;
     pushStyle();
     strokeWeight(1);
+    for(int i = 0; i < level_count; i++){
+      stroke(72,131,145);
+      points[i].draw();
+    }
     if (inBound()){
-      stroke(46, 121, 242);
-      fill(46, 98, 140);
+      stroke(72, 131, 145);
+      fill(72, 131, 145);
     }
     else if(this.name == hl_inBound){
       stroke(179, 186, 198);
       fill(179, 186, 198);
     }
     else {
-      stroke(231, 235, 243);
+      stroke(22,33,45);
       fill(231, 235, 243);
-    }
-    for(int i = 0; i < level_count; i++){
-      points[i].draw();
     }
     for(int i = 0; i < level_count-1; i++){
       line(points[i].x, points[i].y, points[i+1].x, points[i+1].y);
@@ -231,7 +232,7 @@ class Point{
   
   boolean inBound(){
     float disFromC = dist(mouseX, mouseY, x, y);
-    return disFromC <= d/2;
+    return disFromC <= 3*d;
   }
   
   void draw(){

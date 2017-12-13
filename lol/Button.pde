@@ -31,16 +31,16 @@ class Button{
   void draw() {
     if(!bg) {
       if (inBound()) {
-        fill(150);
+        fill(22,33,45);
       }
       else {
-        fill(220);
+        fill(22,33,45,60);
       }
       textSize(12);
       noStroke();
       rect(x,y,wid,hgt,5);
       textAlign(CENTER, CENTER);
-      fill(0);
+      fill(255);
       text(str, x+wid/2, y+hgt/2);
     }
     else {
