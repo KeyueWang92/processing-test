@@ -177,29 +177,32 @@ class RadarObj {
     this.mob = new Pt(mob[0], mob[1]);
     this.utl = new Pt(utl[0], utl[1]);
     this.name = name;
-    //r = random(0,255);
-    //g = random(0,255);
-    //b = random(0,255);
+    r = random(0,255);
+    g = random(0,255);
+    b = random(0,255);
     
-    //since i <=3, we can assign color in this way
-    if(i%4 == 0){
-      r = 220;
-      g = 255;
-      b = 68;
-    } else if(i%4 == 1){      
-      r = 244;
-      g = 75;
-      b = 48;
-    } else if(i%4 == 2){      
-      r = 48;
-      g = 244;
-      b = 238;
-    } else if(i%4 == 3){      
-      r = 147;
-      g = 117;
-      b = 255;
+    for (int index = 0 ; index < clicked.size(); index++){
+      if (clicked.get(index) == i){
+        if(index == 0){
+          r = 220;
+          g = 255;
+          b = 68;
+        } else if(index == 1){      
+          r = 244;
+          g = 75;
+          b = 48;
+        } else if(index == 2){      
+          r = 48;
+          g = 244;
+          b = 238;
+        } else if(index == 3){      
+          r = 147;
+          g = 117;
+          b = 255;
+        }
+      }
     }
-
+    
     endP = new Pt(random(-1, 1) * 2 * width , random(-1, 1) * 2 * height );
     drawornot = true;
   }
