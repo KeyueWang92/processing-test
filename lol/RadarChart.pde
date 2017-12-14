@@ -182,19 +182,19 @@ class RadarObj {
     //b = random(0,255);
     
     //since i <=3, we can assign color in this way
-    if(i == 0){
+    if(i%4 == 0){
       r = 220;
       g = 255;
       b = 68;
-    } else if(i == 1){      
+    } else if(i%4 == 1){      
       r = 244;
       g = 75;
       b = 48;
-    } else if(i == 2){      
+    } else if(i%4 == 2){      
       r = 48;
       g = 244;
       b = 238;
-    } else if(i == 3){      
+    } else if(i%4 == 3){      
       r = 147;
       g = 117;
       b = 255;
