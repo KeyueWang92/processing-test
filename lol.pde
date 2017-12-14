@@ -1,4 +1,4 @@
-/*/* @pjs preload = "back.png"; */
+/* @pjs preload = "back.png"; */
 
 String path;
 ArrayList<Integer> clicked = new ArrayList<Integer>();
