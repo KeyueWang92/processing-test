@@ -22,11 +22,10 @@ class RadarChart {
     center_y = y+hgt/2+0.1*hgt;
     r = hgt*0.5;
     this.bound = bound;
-    radarobj = new RadarObj[clicked.size()];
-    for(int i = 0; i < clicked.size(); i++) {
-      int j = clicked.get(i);
-      radarobj[i] = new RadarObj(dmg(data.abt[j][0]),tough(data.abt[j][1]),
-        cc(data.abt[j][2]),mob(data.abt[j][3]),utl(data.abt[j][4]), data.name[j], i);
+    radarobj = new RadarObj[lineCount];
+    for(int i = 0; i < data.name.length; i++) {
+      radarobj[i] = new RadarObj(dmg(data.abt[i][0]),tough(data.abt[i][1]),
+        cc(data.abt[i][2]),mob(data.abt[i][3]),utl(data.abt[i][4]), data.name[i], i);
     }
     b_dmg = new Button (dmg(max_value)[0]-30,dmg(max_value)[1]-20,60,18,"Damage");
     b_tough = new Button (tough(max_value)[0]-10,tough(max_value)[1]-20,80,18,"Toughness");
@@ -138,7 +137,7 @@ class RadarChart {
       for(int i = 0; i < data.name.length; i++) {
         highlight = bound[i];
         if(array[i]==1) {
-          //radarobj[i].draw(hl_inBound, highlight, false);
+          radarobj[i].draw(hl_inBound, highlight, false);
         }
         else {
           radarobj[i].draw(hl_inBound, highlight, true);
@@ -182,6 +181,7 @@ class RadarObj {
     //g = random(0,255);
     //b = random(0,255);
     
+    //since i <=3, we can assign color in this way
     if(i == 0){
       r = 220;
       g = 255;

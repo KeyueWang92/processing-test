@@ -1,11 +1,10 @@
-
 class RadarChart {
   Parser data;
   float center_x;
   float center_y;
   float r;
-  //boolean[] bound;
-  //int mouseIn;
+  boolean[] bound;
+  int mouseIn;
   RadarObj[] radarobj;
   Button b_dmg;
   Button b_tough;
@@ -15,26 +14,25 @@ class RadarChart {
   float max_value = 3;
   int lineCount;
   
-  RadarChart(Parser p, float x, float y, float wid, float hgt, ArrayList<Integer> clicked) {
+  RadarChart(Parser p, float x, float y, float wid, float hgt, boolean[] bound) {
     
     data = p;
     lineCount = data.name.length;
     center_x = x+wid/2;
     center_y = y+hgt/2+0.1*hgt;
     r = hgt*0.5;
-    //this.bound = bound;
-    radarobj = new RadarObj[clicked.size()];
-    for(int i = 0; i < clicked.size(); i++) {
-      int j = clicked.get(i);
-      radarobj[i] = new RadarObj(dmg(data.abt[j][0]),tough(data.abt[j][1]),
-        cc(data.abt[j][2]),mob(data.abt[j][3]),utl(data.abt[j][4]), data.name[j]);
+    this.bound = bound;
+    radarobj = new RadarObj[lineCount];
+    for(int i = 0; i < data.name.length; i++) {
+      radarobj[i] = new RadarObj(dmg(data.abt[i][0]),tough(data.abt[i][1]),
+        cc(data.abt[i][2]),mob(data.abt[i][3]),utl(data.abt[i][4]), data.name[i], i);
     }
     b_dmg = new Button (dmg(max_value)[0]-30,dmg(max_value)[1]-20,60,18,"Damage");
     b_tough = new Button (tough(max_value)[0]-10,tough(max_value)[1]-20,80,18,"Toughness");
     b_cc = new Button (cc(max_value)[0]-30,cc(max_value)[1]+5,100,18,"Crowd Contral");
     b_mob = new Button (mob(max_value)[0]-30,mob(max_value)[1]+5,60,18,"Mobility");
     b_utl = new Button (utl(max_value)[0]-50,utl(max_value)[1]-20,50,18,"Utility");
-    //mouseIn = -1;
+    mouseIn = -1;
   }
   
   float[] dmg(float n) {
@@ -83,9 +81,10 @@ class RadarChart {
   
   void drawPolygon() {
     pushStyle();
-    fill(255,60);
+    fill(22,33,45,60);
     for(int i = 3; i > 0; i-=1) {
       beginShape();
+      stroke(22,33,45);
       vertex(dmg(i)[0],dmg(i)[1]);
       vertex(tough(i)[0],tough(i)[1]);
       vertex(cc(i)[0],cc(i)[1]);
@@ -97,6 +96,7 @@ class RadarChart {
   }
   
   void drawAxis() {
+    stroke(22,33,45);
     line(center_x, center_y, dmg(max_value)[0], dmg(max_value)[1]);
     line(center_x, center_y, tough(max_value)[0], tough(max_value)[1]);
     line(center_x, center_y, cc(max_value)[0], cc(max_value)[1]);
@@ -112,17 +112,48 @@ class RadarChart {
     b_utl.draw();
   }
   
-  void draw() {
+  boolean[] draw(String hl_inBound, ArrayList<Integer> clicked) {
     strokeWeight(1);
     stroke(200);
     drawPolygon();
     drawAxis();
     drawText();
-    for(int i = 0; i < radarobj.length; i++){
-      radarobj[i].draw();
-    }
    
+    boolean highlight = false;
+    int[] array = new int[data.name.length];
+    if(clicked.size()==0) {
+      for(int i = 0; i < data.name.length; i++) {
+        highlight = bound[i];
+        radarobj[i].draw(hl_inBound, highlight, true);
+      }
+    }
+    else {
+      for(int i = 0; i < data.name.length; i++) {
+        array[i] = 1;
+      }
+      for(int i = 0; i < clicked.size(); i++) {
+        array[clicked.get(i)] = 0;
+      }
+      for(int i = 0; i < data.name.length; i++) {
+        highlight = bound[i];
+        if(array[i]==1) {
+          radarobj[i].draw(hl_inBound, highlight, false);
+        }
+        else {
+          radarobj[i].draw(hl_inBound, highlight, true);
+        }
+      }
+    }    
     
+    for(int i = bound.length-1; i >= 0; i--) {
+      if(radarobj[i].inBound()) {
+        mouseIn = i;
+        break;
+      }
+      if(!radarobj[i].inBound() && i == bound.length-1)
+        mouseIn = -1;
+    }
+    return bound;
   }
 }
 
@@ -137,22 +168,40 @@ class RadarObj {
   float g;
   float b;
   Pt endP;
-  Pt mouse;
-  //boolean drawornot;
+  boolean drawornot;
   
-  RadarObj(float[] dmg, float[] tough, float[] cc, float[] mob, float[] utl, String name) {
+  RadarObj(float[] dmg, float[] tough, float[] cc, float[] mob, float[] utl, String name, int i) {
     this.dmg = new Pt(dmg[0], dmg[1]);
     this.tough = new Pt(tough[0], tough[1]);
     this.cc = new Pt(cc[0], cc[1]);
     this.mob = new Pt(mob[0], mob[1]);
     this.utl = new Pt(utl[0], utl[1]);
     this.name = name;
-    r = random(0,255);
-    g = random(0,255);
-    b = random(0,255);
+    //r = random(0,255);
+    //g = random(0,255);
+    //b = random(0,255);
+    
+    //since i <=3, we can assign color in this way
+    if(i == 0){
+      r = 220;
+      g = 255;
+      b = 68;
+    } else if(i == 1){      
+      r = 244;
+      g = 75;
+      b = 48;
+    } else if(i == 2){      
+      r = 48;
+      g = 244;
+      b = 238;
+    } else if(i == 3){      
+      r = 147;
+      g = 117;
+      b = 255;
+    }
+
     endP = new Pt(random(-1, 1) * 2 * width , random(-1, 1) * 2 * height );
-    mouse = new Pt();
-    //drawornot = true;
+    drawornot = true;
   }
   
   boolean lineIsect(Pt p1, Pt q1, Pt p2, Pt q2) {
@@ -166,7 +215,6 @@ class RadarObj {
 
     float det = a1 * b2 - a2 * b1;
 
-    //if (det == 0) {
     if (isBetween(det, -0.0000001, 0.0000001)) {
         return false;
     } else {
@@ -184,29 +232,30 @@ class RadarObj {
   }
   
   boolean isBetween(float val, float range1, float range2) {
-    float largeNum = range1;
-    float smallNum = range2;
-    if (smallNum > largeNum) {
-        largeNum = range2;
-        smallNum = range1;
-    }
-    if ((val < largeNum) && (val > smallNum)) {
-        return true;
-    }
-    return false;
+      float largeNum = range1;
+      float smallNum = range2;
+      if (smallNum > largeNum) {
+          largeNum = range2;
+          smallNum = range1;
+      }
+  
+      if ((val < largeNum) && (val > smallNum)) {
+          return true;
+      }
+      return false;
   }
 
   boolean inBound() {
-    //if(!drawornot) return false;
-    //Pt mouse = new Pt(mouseX, mouseY);
+    //endP =  new Pt(random(-1, 1) * 2 * width, random(-1, 1) * 2 * height);
+    if(!drawornot) return false;
+    Pt cur = new Pt(mouseX, mouseY);
     int num = 0;
-    if(lineIsect(mouse, this.endP, this.dmg, this.tough)) num++;
-    if(lineIsect(mouse, this.endP, this.tough, this.cc)) num++;
-    if(lineIsect(mouse, this.endP, this.cc, this.mob)) num++;
-    if(lineIsect(mouse, this.endP, this.mob, this.utl)) num++;
-    if(lineIsect(mouse, this.endP, this.utl, this.dmg)) num++;
-    
-    if(num % 2 == 0) return false;
+    if(lineIsect(cur, endP, dmg, tough)) num++;
+    if(lineIsect(cur, endP, tough, cc)) num++;
+    if(lineIsect(cur, endP, cc, mob)) num++;
+    if(lineIsect(cur, endP, mob, utl)) num++;
+    if(lineIsect(cur, endP, utl, dmg)) num++;
+    if(num%2==0) return false;
     else {
       //hl_inBound = this.name;
       pushStyle();
@@ -219,53 +268,39 @@ class RadarObj {
     }
   }
   
-  void draw() {
-    this.mouse.x = mouseX;
-    this.mouse.y = mouseY;
-    println(this.name);
-    println("dmg: ", dmg.x," ",dmg.y);
-    println("tuogh: ", tough.x," ",tough.y);
-    println("cc: ", cc.x," ",cc.y);
-     println("mob: ", mob.x," ",mob.y);
-      println("utl: ", utl.x," ",utl.y);
-    println("endp: ", endP.x," ",endP.y);
-    
+  void draw(String hl_inBound, boolean highlight, boolean drawornot) {
+    this.drawornot = drawornot;
+    if(!drawornot) return;
     if (inBound()){
-      fill(r,g,b,180);
-       
+      fill(r,g,b,90);
     }
-    
+    else if(this.name == hl_inBound){
+      fill(r,g,b,90);
+    }
     else {
       fill(r,g,b,40);
     }
     
-    pushStyle();
-    stroke(255,0,0);
-    line(dmg.x,dmg.y,tough.x,tough.y);
-    line(tough.x,tough.y,cc.x,cc.y);
-    line(cc.x,cc.y,mob.x,mob.y);
-    line(mob.x,mob.y,utl.x,utl.y);
-    line(utl.x,utl.y,dmg.x,dmg.y);
-    popStyle();
     beginShape();
+    stroke(r,g,b,120);
     vertex(dmg.x,dmg.y);
     vertex(tough.x,tough.y);
     vertex(cc.x,cc.y);
     vertex(mob.x,mob.y);
     vertex(utl.x,utl.y);
     endShape(CLOSE);
-    pushStyle();
-    stroke(r,g,b);
-    line(mouseX, mouseY, endP.x, endP.y);
-    popStyle();
+    //pushStyle();
+    //stroke(r,g,b);
+    //line(mouseX, mouseY, endP.x, endP.y);
+    //popStyle();
     
   }
 }
 
 class Pt {
-   public float x;
-   public float y;
-    Pt(){}
+    float x;
+    float y;
+    
     Pt(float x, float y) {
       this.x = x;
       this.y = y;
