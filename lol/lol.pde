@@ -1,4 +1,5 @@
-/* @pjs preload = "back.png, bg.jpg, button.png, champion-bg.jpg, confirm.jpg, multi-bg.jpg"; */
+/* @pjs preload = "back.png, bg.jpg, button.png, champion-bg.jpg, confirm.jpg, multi-bg.jpg,
+0.jpg, 1.jpg, 2.jpg, 3.jpg"; */
 
 String path;
 ArrayList<Integer> clicked = new ArrayList<Integer>();
