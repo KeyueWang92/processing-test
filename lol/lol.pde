@@ -48,7 +48,7 @@ void draw() {
     img = loadImage(path);
     image(img,0,0);
     for(int i = 0; i < 4; i++) {
-      path = "icon/"+str(i)+".jpg";
+      path = str(i)+".jpg";
       img = loadImage(path);
       icon_obj temp = new icon_obj(118+i*120, 123, 100, 170, i, img);
       iconobj[i] = temp;
