@@ -25,7 +25,7 @@ class RadarChart {
     radarobj = new RadarObj[lineCount];
     for(int i = 0; i < data.name.length; i++) {
       radarobj[i] = new RadarObj(dmg(data.abt[i][0]),tough(data.abt[i][1]),
-        cc(data.abt[i][2]),mob(data.abt[i][3]),utl(data.abt[i][4]), data.name[i]);
+        cc(data.abt[i][2]),mob(data.abt[i][3]),utl(data.abt[i][4]), data.name[i], i);
     }
     b_dmg = new Button (dmg(max_value)[0]-30,dmg(max_value)[1]-20,60,18,"Damage");
     b_tough = new Button (tough(max_value)[0]-10,tough(max_value)[1]-20,80,18,"Toughness");
@@ -170,16 +170,36 @@ class RadarObj {
   Pt endP;
   boolean drawornot;
   
-  RadarObj(float[] dmg, float[] tough, float[] cc, float[] mob, float[] utl, String name) {
+  RadarObj(float[] dmg, float[] tough, float[] cc, float[] mob, float[] utl, String name, int i) {
     this.dmg = new Pt(dmg[0], dmg[1]);
     this.tough = new Pt(tough[0], tough[1]);
     this.cc = new Pt(cc[0], cc[1]);
     this.mob = new Pt(mob[0], mob[1]);
     this.utl = new Pt(utl[0], utl[1]);
     this.name = name;
-    r = random(0,255);
-    g = random(0,255);
-    b = random(0,255);
+    //r = random(0,255);
+    //g = random(0,255);
+    //b = random(0,255);
+    
+    //since i <=3, we can assign color in this way
+    if(i == 0){
+      r = 220;
+      g = 255;
+      b = 68;
+    } else if(i == 1){      
+      r = 244;
+      g = 75;
+      b = 48;
+    } else if(i == 2){      
+      r = 48;
+      g = 244;
+      b = 238;
+    } else if(i == 3){      
+      r = 147;
+      g = 117;
+      b = 255;
+    }
+
     endP = new Pt(random(-1, 1) * 2 * width , random(-1, 1) * 2 * height );
     drawornot = true;
   }
