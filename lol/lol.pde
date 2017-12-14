@@ -1,3 +1,5 @@
+/* @pjs preload = "back.png bg.jpg button.png champion-bg.jpg confirm.jpg multi-bg.jpg"; */
+
 String path;
 ArrayList<Integer> clicked = new ArrayList<Integer>();
 boolean if_clicked[];
