@@ -195,7 +195,7 @@ void mouseClicked() {
   }
 }
 
-void predict(String str1, String str2) {
+void predictXYZ(String str1, String str2) {
   index_score = new int[total][2];
   convert_js_to_java(str1,str2);
   assign_scores();
@@ -357,6 +357,10 @@ void assign_scores(){
     index_score[i][0] = score;
     index_score[i][1] = i;
   }
+}
+
+void hello_world(){
+  println("hello,world.");
 }
 
 class icon_obj {
