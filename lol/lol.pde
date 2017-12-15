@@ -10,7 +10,7 @@
 91-4.png, 92-2.png, 92-3.png, 92-4.png, 93-2.png, 93-3.png, 93-4.png, 94-2.png, 94-3.png, 94-4.png, 95-2.png, 95-3.png, 95-4.png, 96-2.png, 96-3.png, 96-4.png, 97-2.png, 97-3.png, 97-4.png, 98-2.png, 98-3.png, 98-4.png, 99-2.png, 99-3.png, 99-4.png, 100-2.png, 100-3.png, 100-4.png, 101-2.png, 101-3.png, 101-4.png, 102-2.png, 102-3.png, 102-4.png, 103-2.png, 103-3.png, 103-4.png, 104-2.png, 104-3.png, 104-4.png, 105-2.png, 105-3.png, 105-4.png, 106-2.png, 106-3.png, 106-4.png, 107-2.png, 107-3.png, 
 107-4.png, 108-2.png, 108-3.png, 108-4.png, 109-2.png, 109-3.png, 109-4.png, 110-2.png, 110-3.png, 110-4.png, 111-2.png, 111-3.png, 111-4.png, 112-2.png, 112-3.png, 112-4.png, 113-2.png, 113-3.png, 113-4.png, 114-2.png, 114-3.png, 114-4.png, 115-2.png, 115-3.png, 115-4.png, 116-2.png, 116-3.png, 116-4.png, 117-2.png, 117-3.png, 117-4.png, 118-2.png, 118-3.png, 118-4.png, 119-2.png, 119-3.png, 119-4.png, 120-2.png, 120-3.png, 120-4.png, 121-2.png, 121-3.png, 121-4.png, 122-2.png, 122-3.png, 122-4.png, 
 123-2.png, 123-3.png, 123-4.png, 124-2.png, 124-3.png, 124-4.png, 125-2.png, 125-3.png, 125-4.png, 126-2.png, 126-3.png, 126-4.png, 127-2.png, 127-3.png, 127-4.png, 128-2.png, 128-3.png, 128-4.png, 129-2.png, 129-3.png, 129-4.png, 130-2.png, 130-3.png, 130-4.png, 131-2.png, 131-3.png, 131-4.png, 132-2.png, 132-3.png, 132-4.png, 133-2.png, 133-3.png, 133-4.png, 134-2.png, 134-3.png, 134-4.png, 135-2.png, 135-3.png, 135-4.png, 136-2.png, 136-3.png, 136-4.png, 137-2.png, 137-3.png, 137-4.png, 138-2.png, 
-138-3.png, 138-4.png, 139-2.png, 139-3.png, 139-4.png"; */
+138-3.png, 138-4.png"; */
 
 String path;
 ArrayList<Integer> clicked = new ArrayList<Integer>();
