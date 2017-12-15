@@ -202,6 +202,7 @@ void predict(String str1, String str2) {
   get_result();
   cur_state = 2;
   pre_state = 0;
+  println(clicked);
 }
 
 void convert_js_to_java(String list1, String list2){
