@@ -130,6 +130,7 @@ void draw() {
   }
   else if (cur_state == 2) {
     //comparison = new multi(clicked,p);
+    comparison.clicked = clicked;
     path = "multi-bg.jpg";
     img = loadImage(path);
     image(img,0,0);
