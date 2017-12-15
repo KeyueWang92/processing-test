@@ -195,7 +195,7 @@ void mouseClicked() {
   }
 }
 
-void predictXYZ(String str1, String str2) {
+void predict(String str1, String str2) {
   index_score = new int[total][2];
   convert_js_to_java(str1,str2);
   assign_scores();
