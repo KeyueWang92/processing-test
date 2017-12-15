@@ -26,7 +26,7 @@ class multi {
     if(clicked.size()==3) wid = 320+17;
     if(clicked.size()==4) wid = 240+10;
     for(int i = 0; i < clicked.size(); i++) {
-      String path = "multi/"+str(clicked.get(i))+"-"+str(clicked.size())+".png";
+      String path = str(clicked.get(i))+"-"+str(clicked.size())+".png";
       img = loadImage(path);
       image(img,100+wid*i,100);
     }
