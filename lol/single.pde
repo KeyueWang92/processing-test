@@ -3,7 +3,7 @@ class single {
   RadarChart radar;
   boolean[] bound;
   Parser data;
-  
+
   single(int id, Parser data) {
     this.id = id;
     this.data = data;
