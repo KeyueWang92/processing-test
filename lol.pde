@@ -196,11 +196,13 @@ void mouseClicked() {
 }
 
 void predict(String str1, String str2) {
-  index_score = new int[total][2];
-  convert_js_to_java(str1,str2);
-  assign_scores();
-  get_result();
-  cur_state = 2;
+  //index_score = new int[total][2];
+  //convert_js_to_java(str1,str2);
+  //assign_scores();
+  //get_result();
+  //cur_state = 2;
+  clicked.add(50);
+  cur_state = 1;
   pre_state = 0;
   println(clicked.size());
 }
