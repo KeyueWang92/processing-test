@@ -20,7 +20,7 @@
                 console.log(tags);
                 console.log(weights);
     			if (pjs) {
-                    pjs.predict_champions();
+                    pjs.predict_champions(tags,weights);
     			}
     			else setTimeout(getResult,1000);
     		}

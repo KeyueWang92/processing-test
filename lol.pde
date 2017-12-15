@@ -39,10 +39,7 @@ int total;
 int cur_page;
 int total_page;
 int temp_total;
-//for test
-String str1 = "jungle,near,male,cute,Fighter,yes,yes,yes,yes,yes,yes";
-String str2 = "1,1,1,1,1,1,1,1,1,1,1";
-///////
+
 void setup() {
   
   temp_total = 139;
@@ -198,7 +195,7 @@ void mouseClicked() {
   }
 }
 
-void predict_champions() {
+void predict_champions(String str1, String str2) {
   index_score = new int[total][2];
   convert_js_to_java(str1,str2);
   assign_scores();
