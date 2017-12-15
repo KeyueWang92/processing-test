@@ -40,9 +40,6 @@ int cur_page;
 int total_page;
 int temp_total;
 
-String str1 = "jungle,far,female,sexy,Mage,yes,yes,no,yes,no,no";
-String str2 = "8,6,8,10,6,5,7,3,3,5,1";
-
 void setup() {
   
   temp_total = 139;
@@ -132,7 +129,7 @@ void draw() {
     sing.draw(clicked.get(0));
   }
   else if (cur_state == 2) {
-    comparison = new multi(clicked,p);
+    //comparison = new multi(clicked,p);
     path = "multi-bg.jpg";
     img = loadImage(path);
     image(img,0,0);
@@ -207,10 +204,7 @@ void predict(String str1, String str2) {
   assign_scores();
   get_result();
   cur_state = 2;
-  //clicked.add(50);
-  //cur_state = 1;
   pre_state = 0;
-  println(clicked);
 }
 
 void convert_js_to_java(String list1, String list2){
