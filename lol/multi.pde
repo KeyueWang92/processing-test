@@ -21,6 +21,15 @@ class multi {
   
   void draw(){
     hl_inBound = "";
+    int wid = 0;
+    if(clicked.size()==2) wid = 480+30;
+    if(clicked.size()==3) wid = 320+17;
+    if(clicked.size()==4) wid = 240+10;
+    for(int i = 0; i < clicked.size(); i++) {
+      String path = str(clicked.get(i))+"-"+str(clicked.size())+".png";
+      img = loadImage(path);
+      image(img,100+wid*i,100);
+    }
     bound = lines.draw(hl_inBound, clicked);
     //for(int i = 0; i < bound.length; i++) {
     //  if(bound[i]==true) {

@@ -6,6 +6,8 @@ ArrayList<Integer> clicked = new ArrayList<Integer>();
 boolean if_clicked[];
 PImage img;
 icon_obj confirm;
+icon_obj prev;
+icon_obj forward;
 icon_obj back;
 icon_obj[] iconobj;
 int cur_state;
@@ -17,19 +19,30 @@ int lineButt = 0;
 String hl_inBound; //name of the currently hovered character
 Parser p;
 multi comparison;
+single sing;
 int total;
+int cur_page;
+int total_page;
+int temp_total;
+
 void setup() {
+  
+  temp_total = 139;
+  cur_page = 0;
+  total_page = 5;
+  
   size(1200,800);
   smooth();
   total = 139;
   cur_state = 0;
-  iconobj = new icon_obj[4];
-  if_clicked = new boolean[4];
-  for(int i = 0; i < 4; i++) {
+  iconobj = new icon_obj[temp_total];
+  if_clicked = new boolean[temp_total];
+  for(int i = 0; i < temp_total; i++) {
     if_clicked[i] = false;
   }
   
   p = new Parser("database.csv");
+  comparison = new multi(clicked,p);
   /*
   for(int i = 0; i < 4; i++) {
     path = "icon/"+str(i)+".jpg";
@@ -47,33 +60,58 @@ void draw() {
     path = "champion-bg.jpg";
     img = loadImage(path);
     image(img,0,0);
-    for(int i = 0; i < 4; i++) {
+    for(int i = 0; i < temp_total; i++) {
       path = str(i)+".jpg";
       img = loadImage(path);
-      icon_obj temp = new icon_obj(118+i*120, 123, 100, 170, i, img);
-      iconobj[i] = temp;
+      if(i >= 0 && i < 8) iconobj[i] = new icon_obj(cur_page*1200+124+i*120, 123, 100, 170, i, img);
+      if(i >= 8 && i < 16) iconobj[i] = new icon_obj(cur_page*1200+124+(i-8)*120, 323, 100, 170, i, img);
+      if(i >= 16 && i < 24) iconobj[i] = new icon_obj(cur_page*1200+124+(i-16)*120, 523, 100, 170, i, img);
+      if(i >= 24 && i < 32) iconobj[i] = new icon_obj(cur_page*1200+1200+124+(i-24)*120, 123, 100, 170, i, img);
+      if(i >= 32 && i < 40) iconobj[i] = new icon_obj(cur_page*1200+1200+124+(i-32)*120, 323, 100, 170, i, img);
+      if(i >= 40 && i < 48) iconobj[i] = new icon_obj(cur_page*1200+1200+124+(i-40)*120, 523, 100, 170, i, img);
+      if(i >= 48 && i < 56) iconobj[i] = new icon_obj(cur_page*1200+1200*2+124+(i-48)*120, 123, 100, 170, i, img);
+      if(i >= 56 && i < 64) iconobj[i] = new icon_obj(cur_page*1200+1200*2+124+(i-56)*120, 323, 100, 170, i, img);
+      if(i >= 64 && i < 72) iconobj[i] = new icon_obj(cur_page*1200+1200*2+124+(i-64)*120, 523, 100, 170, i, img);
+      if(i >= 72 && i < 80) iconobj[i] = new icon_obj(cur_page*1200+1200*3+124+(i-72)*120, 123, 100, 170, i, img);
+      if(i >= 80 && i < 88) iconobj[i] = new icon_obj(cur_page*1200+1200*3+124+(i-80)*120, 323, 100, 170, i, img);
+      if(i >= 88 && i < 96) iconobj[i] = new icon_obj(cur_page*1200+1200*3+124+(i-88)*120, 523, 100, 170, i, img);
+      if(i >= 96 && i < 104) iconobj[i] = new icon_obj(cur_page*1200+1200*4+124+(i-96)*120, 123, 100, 170, i, img);
+      if(i >= 104 && i < 112) iconobj[i] = new icon_obj(cur_page*1200+1200*4+124+(i-104)*120, 323, 100, 170, i, img);
+      if(i >= 112 && i < 120) iconobj[i] = new icon_obj(cur_page*1200+1200*4+124+(i-112)*120, 523, 100, 170, i, img);
+      if(i >= 120 && i < 128) iconobj[i] = new icon_obj(cur_page*1200+1200*5+124+(i-120)*120, 123, 100, 170, i, img);
+      if(i >= 128 && i < 136) iconobj[i] = new icon_obj(cur_page*1200+1200*5+124+(i-128)*120, 323, 100, 170, i, img);
+      if(i >= 136 && i < 144) iconobj[i] = new icon_obj(cur_page*1200+1200*5+124+(i-136)*120, 523, 100, 170, i, img);
     }
-    for(int i = 0; i < 4; i++) {
+    for(int i = 0; i < temp_total; i++) {
       if(iconobj[i].inBound()) mouse_in = i;
       if(clicked.size() == 0) iconobj[i].draw(if_clicked[i],false);
       else iconobj[i].draw(if_clicked[i],true);
     }
+    path = "back.png";
+    img = loadImage(path);
+    prev = new icon_obj(40, 390, 51, 56, -1, img);
+    prev.draw(false,false);
+    path = "forward.png";
+    img = loadImage(path);
+    forward = new icon_obj(1098, 390, 51, 56, -1, img);
+    forward.draw(false,false);
     path = "confirm.jpg";
     img = loadImage(path);
     confirm = new icon_obj(569, 708, 51, 56, -1, img);
     confirm.draw(false,false);
   }
   else if (cur_state == 1) {
-    path = "single/"+str(clicked.get(0))+".jpg";
+    sing = new single(clicked.get(0),p);
+    path = str(clicked.get(0))+".jpg";
     img = loadImage(path);
     image(img,0,0);
     path = "back.png";
     img = loadImage(path);
     back = new icon_obj(569, 708, 51, 56, -1, img);
     back.draw(false,false);
+    sing.draw();
   }
   else if (cur_state == 2) {
-    comparison = new multi(clicked,p);
     path = "multi-bg.jpg";
     img = loadImage(path);
     image(img,0,0);
@@ -93,10 +131,16 @@ void mouseClicked() {
           cur_state = 1;
           pre_state = 0;
         }
-        else if(clicked.size() > 1) {
+        else if(clicked.size() > 1 && clicked.size() < 5) {
           cur_state = 2;
           pre_state = 0;
         }
+      }
+      else if(prev.inBound() && cur_page!=0) {
+        cur_page++;
+      }
+      else if(forward.inBound() && cur_page!=-1*total_page) {
+        cur_page--;
       }
       else if(mouse_in != -1) {
         if(if_clicked[mouse_in]) {

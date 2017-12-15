@@ -11,7 +11,7 @@ class Parser{
   public float[][]  grows;
   public float[] ms;
   public float[] range;
-  public float[] difficulty;
+  public int[] difficulty;
   public String[] damage_type;
   public String[] gender;
   public String[] appearance;
@@ -34,7 +34,7 @@ class Parser{
     grows = new float[lines_count][16];
     ms = new float[lines_count];
     range = new float[lines_count];
-    difficulty = new float[lines_count];
+    difficulty = new int[lines_count];
     damage_type = new String[lines_count];
     gender = new String[lines_count];
     appearance = new String[lines_count];
@@ -62,7 +62,7 @@ class Parser{
       }
       ms[i] = float(data[30]);
       range[i] =float(data[31]);
-      difficulty[i] = float(data[32]);
+      difficulty[i] = int(data[32]);
       damage_type[i] = data[33];
       gender[i] = data[34];
       appearance[i] = data[35];
