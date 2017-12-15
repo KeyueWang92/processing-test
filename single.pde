@@ -4,8 +4,7 @@ class single {
   boolean[] bound;
   Parser data;
   
-  single(int id, Parser data) {
-    this.id = id;
+  single(Parser data) {
     this.data = data;
     bound = new boolean[data.name.length];
     for(int i = 0; i < data.name.length; i++) {
@@ -15,7 +14,8 @@ class single {
     radar = new RadarChart(p,1200*.36,800*.14, 1200*.25,800*.35, bound);
   }
   
-  void draw(){
+  void draw(int id){
+    this.id = id;
     radar.draw("", clicked);
     noStroke();
     fill(12,149,171);
