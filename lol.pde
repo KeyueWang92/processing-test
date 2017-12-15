@@ -10,7 +10,7 @@
 91-4.png, 92-2.png, 92-3.png, 92-4.png, 93-2.png, 93-3.png, 93-4.png, 94-2.png, 94-3.png, 94-4.png, 95-2.png, 95-3.png, 95-4.png, 96-2.png, 96-3.png, 96-4.png, 97-2.png, 97-3.png, 97-4.png, 98-2.png, 98-3.png, 98-4.png, 99-2.png, 99-3.png, 99-4.png, 100-2.png, 100-3.png, 100-4.png, 101-2.png, 101-3.png, 101-4.png, 102-2.png, 102-3.png, 102-4.png, 103-2.png, 103-3.png, 103-4.png, 104-2.png, 104-3.png, 104-4.png, 105-2.png, 105-3.png, 105-4.png, 106-2.png, 106-3.png, 106-4.png, 107-2.png, 107-3.png, 
 107-4.png, 108-2.png, 108-3.png, 108-4.png, 109-2.png, 109-3.png, 109-4.png, 110-2.png, 110-3.png, 110-4.png, 111-2.png, 111-3.png, 111-4.png, 112-2.png, 112-3.png, 112-4.png, 113-2.png, 113-3.png, 113-4.png, 114-2.png, 114-3.png, 114-4.png, 115-2.png, 115-3.png, 115-4.png, 116-2.png, 116-3.png, 116-4.png, 117-2.png, 117-3.png, 117-4.png, 118-2.png, 118-3.png, 118-4.png, 119-2.png, 119-3.png, 119-4.png, 120-2.png, 120-3.png, 120-4.png, 121-2.png, 121-3.png, 121-4.png, 122-2.png, 122-3.png, 122-4.png, 
 123-2.png, 123-3.png, 123-4.png, 124-2.png, 124-3.png, 124-4.png, 125-2.png, 125-3.png, 125-4.png, 126-2.png, 126-3.png, 126-4.png, 127-2.png, 127-3.png, 127-4.png, 128-2.png, 128-3.png, 128-4.png, 129-2.png, 129-3.png, 129-4.png, 130-2.png, 130-3.png, 130-4.png, 131-2.png, 131-3.png, 131-4.png, 132-2.png, 132-3.png, 132-4.png, 133-2.png, 133-3.png, 133-4.png, 134-2.png, 134-3.png, 134-4.png, 135-2.png, 135-3.png, 135-4.png, 136-2.png, 136-3.png, 136-4.png, 137-2.png, 137-3.png, 137-4.png, 138-2.png, 
-138-3.png, 138-4.png, single-0.jpg, single-1.jpg, single-2.jpg, single-3.jpg, single-4.jpg, single-5.jpg, single-6.jpg, single-7.jpg, single-8.jpg, single-9.jpg, single-10.jpg, single-11.jpg, single-12.jpg, single-13.jpg, single-14.jpg, single-15.jpg, single-16.jpg, single-17.jpg, single-18.jpg, single-19.jpg, single-20.jpg, single-21.jpg, single-22.jpg, single-23.jpg, single-24.jpg, single-25.jpg, single-26.jpg, single-27.jpg, single-28.jpg, single-29.jpg, single-30.jpg, single-31.jpg, single-32.jpg, 
+138-3.png, 138-4.png" single-0.jpg, single-1.jpg, single-2.jpg, single-3.jpg, single-4.jpg, single-5.jpg, single-6.jpg, single-7.jpg, single-8.jpg, single-9.jpg, single-10.jpg, single-11.jpg, single-12.jpg, single-13.jpg, single-14.jpg, single-15.jpg, single-16.jpg, single-17.jpg, single-18.jpg, single-19.jpg, single-20.jpg, single-21.jpg, single-22.jpg, single-23.jpg, single-24.jpg, single-25.jpg, single-26.jpg, single-27.jpg, single-28.jpg, single-29.jpg, single-30.jpg, single-31.jpg, single-32.jpg, 
 single-33.jpg, single-34.jpg, single-35.jpg, single-36.jpg, single-37.jpg, single-38.jpg, single-39.jpg, single-40.jpg, single-41.jpg, single-42.jpg, single-43.jpg, single-44.jpg, single-45.jpg, single-46.jpg, single-47.jpg, single-48.jpg, single-49.jpg, single-50.jpg, single-51.jpg, single-52.jpg, single-53.jpg, single-54.jpg, single-55.jpg, single-56.jpg, single-57.jpg, single-58.jpg, single-59.jpg, single-60.jpg, single-61.jpg, single-62.jpg, single-63.jpg, single-64.jpg, single-65.jpg, single-66.jpg, 
 single-67.jpg, single-68.jpg, single-69.jpg, single-70.jpg, single-71.jpg, single-72.jpg, single-73.jpg, single-74.jpg, single-75.jpg, single-76.jpg, single-77.jpg, single-78.jpg, single-79.jpg, single-80.jpg, single-81.jpg, single-82.jpg, single-83.jpg, single-84.jpg, single-85.jpg, single-86.jpg, single-87.jpg, single-88.jpg, single-89.jpg, single-90.jpg, single-91.jpg, single-92.jpg, single-93.jpg, single-94.jpg, single-95.jpg, single-96.jpg, single-97.jpg, single-98.jpg, single-99.jpg, single-100.jpg, 
 single-101.jpg, single-102.jpg, single-103.jpg, single-104.jpg, single-105.jpg, single-106.jpg, single-107.jpg, single-108.jpg, single-109.jpg, single-110.jpg, single-111.jpg, single-112.jpg, single-113.jpg, single-114.jpg, single-115.jpg, single-116.jpg, single-117.jpg, single-118.jpg, single-119.jpg, single-120.jpg, single-121.jpg, single-122.jpg, single-123.jpg, single-124.jpg, single-125.jpg, single-126.jpg, single-127.jpg, single-128.jpg, single-129.jpg, single-130.jpg, single-131.jpg, single-132.jpg, 
@@ -195,53 +195,13 @@ void mouseClicked() {
   }
 }
 
-void predict_champions(String str1, String str2) {
+void predict(String str1, String str2) {
   index_score = new int[total][2];
   convert_js_to_java(str1,str2);
   assign_scores();
   get_result();
   cur_state = 2;
   pre_state = 0;
-  println(clicked);
-}
-
-class icon_obj {
-  float x;
-  float y;
-  float wid;
-  float hgt;
-  int id;
-  PImage img;
-  //boolean if_clicked;
-  int n = 0;
-  
-  icon_obj(float x, float y, float wid, float hgt, int id, PImage img) {
-    this.x = x;
-    this.y = y;
-    this.wid = wid;
-    this.hgt = hgt;
-    this.id = id;
-    this.img = img;
-    //if_clicked = false;
-  }
-  
-  boolean inBound() {
-    return (mouseX > x && mouseX < x+wid && mouseY > y && mouseY < y+hgt);
-  }
-  
-  void draw(boolean if_clicked, boolean if_gray) {
-    if((inBound() || if_clicked) && id != -1) {
-      stroke(158,120,50);
-      strokeWeight(2);
-      rect(x-7, y-5, 1.09*wid, 1.095*hgt);
-      if(!if_clicked && if_gray) img.filter(GRAY);
-      image(img, x-7, y-5, 1.1*wid, 1.1*hgt);
-    }
-    else {
-      if(if_gray) img.filter(GRAY);
-      image(img, x, y);
-    }
-  }
 }
 
 void convert_js_to_java(String list1, String list2){
@@ -286,6 +246,12 @@ void get_result(){
     }
   }
   
+  //for test
+  id1 = 0;
+  id2 = 1;
+  id3 = 2;
+  id4 = 3;
+  ////////////////
   clicked = new ArrayList<Integer>();
   clicked.add(id1);
   clicked.add(id2);
@@ -396,5 +362,44 @@ void assign_scores(){
     }
     index_score[i][0] = score;
     index_score[i][1] = i;
+  }
+}
+
+class icon_obj {
+  float x;
+  float y;
+  float wid;
+  float hgt;
+  int id;
+  PImage img;
+  //boolean if_clicked;
+  int n = 0;
+  
+  icon_obj(float x, float y, float wid, float hgt, int id, PImage img) {
+    this.x = x;
+    this.y = y;
+    this.wid = wid;
+    this.hgt = hgt;
+    this.id = id;
+    this.img = img;
+    //if_clicked = false;
+  }
+  
+  boolean inBound() {
+    return (mouseX > x && mouseX < x+wid && mouseY > y && mouseY < y+hgt);
+  }
+  
+  void draw(boolean if_clicked, boolean if_gray) {
+    if((inBound() || if_clicked) && id != -1) {
+      stroke(158,120,50);
+      strokeWeight(2);
+      rect(x-7, y-5, 1.09*wid, 1.095*hgt);
+      if(!if_clicked && if_gray) img.filter(GRAY);
+      image(img, x-7, y-5, 1.1*wid, 1.1*hgt);
+    }
+    else {
+      if(if_gray) img.filter(GRAY);
+      image(img, x, y);
+    }
   }
 }
