@@ -245,13 +245,7 @@ void get_result(){
       temp[i][0] = 0;
     }
   }
-  
-  //for test
-  id1 = 0;
-  id2 = 1;
-  id3 = 2;
-  id4 = 3;
-  ////////////////
+
   clicked = new ArrayList<Integer>();
   clicked.add(id1);
   clicked.add(id2);
