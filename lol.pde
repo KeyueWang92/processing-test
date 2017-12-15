@@ -202,6 +202,7 @@ void predict_champions(String str1, String str2) {
   get_result();
   cur_state = 2;
   pre_state = 0;
+  println(clicked);
 }
 
 class icon_obj {
