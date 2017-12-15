@@ -40,6 +40,9 @@ int cur_page;
 int total_page;
 int temp_total;
 
+String str1 = "jungle,far,female,sexy,Mage,yes,yes,no,yes,no,no";
+String str2 = "8,6,8,10,6,5,7,3,3,5,1";
+
 void setup() {
   
   temp_total = 139;
@@ -55,10 +58,10 @@ void setup() {
   for(int i = 0; i < temp_total; i++) {
     if_clicked[i] = false;
   }
-  
   p = new Parser("database.csv");
+  //predict(str1,str2);
   comparison = new multi(clicked,p);
-    sing = new single(p);
+  sing = new single(p);
   /*
   for(int i = 0; i < 4; i++) {
     path = "icon/"+str(i)+".jpg";
@@ -67,6 +70,8 @@ void setup() {
     iconobj[i] = temp;
   }
   */
+
+  
 }
 
 void draw() {
@@ -127,6 +132,7 @@ void draw() {
     sing.draw(clicked.get(0));
   }
   else if (cur_state == 2) {
+    comparison = new multi(clicked,p);
     path = "multi-bg.jpg";
     img = loadImage(path);
     image(img,0,0);
@@ -196,15 +202,15 @@ void mouseClicked() {
 }
 
 void predict(String str1, String str2) {
-  //index_score = new int[total][2];
-  //convert_js_to_java(str1,str2);
-  //assign_scores();
-  //get_result();
-  //cur_state = 2;
-  clicked.add(50);
-  cur_state = 1;
+  index_score = new int[total][2];
+  convert_js_to_java(str1,str2);
+  assign_scores();
+  get_result();
+  cur_state = 2;
+  //clicked.add(50);
+  //cur_state = 1;
   pre_state = 0;
-  println(clicked.size());
+  println(clicked);
 }
 
 void convert_js_to_java(String list1, String list2){
@@ -360,10 +366,6 @@ void assign_scores(){
     index_score[i][0] = score;
     index_score[i][1] = i;
   }
-}
-
-void hello_world(){
-  println("hello,world.");
 }
 
 class icon_obj {
